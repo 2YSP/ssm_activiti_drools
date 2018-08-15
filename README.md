@@ -1,0 +1,2 @@
+# ssm_activiti_drools
+使用SSM框架搭建，工作流activiti整合规则引擎drools的一个销售打折的例子。
