@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/testm1533024793101">
+  <process id="process1" name="process1" isExecutable="true" isClosed="false" processType="None">
+    <startEvent id="startevent1" name="StartEvent"></startEvent>
+    <userTask id="usertask1" name="录入销售信息"></userTask>
+    <businessRuleTask id="businessruletask1" name="进行优惠策略应用" activiti:ruleVariablesInput="${sale1},${sale2},${sale3},${sale4}" activiti:resultVariable="saleResults"></businessRuleTask>
+    <serviceTask id="servicetask1" name="输出结果" activiti:class="cn.sp.service.SaleJavaDelegate"></serviceTask>
+    <endEvent id="endevent1" name="EndEvent"></endEvent>
+    <sequenceFlow id="_7" sourceRef="startevent1" targetRef="usertask1"></sequenceFlow>
+    <sequenceFlow id="_8" sourceRef="usertask1" targetRef="businessruletask1"></sequenceFlow>
+    <sequenceFlow id="_9" sourceRef="businessruletask1" targetRef="servicetask1"></sequenceFlow>
+    <sequenceFlow id="_10" sourceRef="servicetask1" targetRef="endevent1"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_process1">
+    <bpmndi:BPMNPlane bpmnElement="process1" id="BPMNPlane_process1">
+      <bpmndi:BPMNShape bpmnElement="startevent1" id="BPMNShape_startevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="46.0" y="170.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask1" id="BPMNShape_usertask1">
+        <omgdc:Bounds height="55.0" width="85.0" x="200.0" y="160.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="businessruletask1" id="BPMNShape_businessruletask1">
+        <omgdc:Bounds height="60.0" width="130.0" x="356.0" y="158.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="servicetask1" id="BPMNShape_servicetask1">
+        <omgdc:Bounds height="55.0" width="85.0" x="565.0" y="160.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent1" id="BPMNShape_endevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="755.0" y="170.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="_7" id="BPMNEdge__7">
+        <omgdi:waypoint x="81.0" y="187.0"></omgdi:waypoint>
+        <omgdi:waypoint x="135.0" y="185.0"></omgdi:waypoint>
+        <omgdi:waypoint x="200.0" y="187.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_8" id="BPMNEdge__8">
+        <omgdi:waypoint x="285.0" y="187.0"></omgdi:waypoint>
+        <omgdi:waypoint x="320.0" y="185.0"></omgdi:waypoint>
+        <omgdi:waypoint x="356.0" y="188.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_9" id="BPMNEdge__9">
+        <omgdi:waypoint x="486.0" y="188.0"></omgdi:waypoint>
+        <omgdi:waypoint x="530.0" y="185.0"></omgdi:waypoint>
+        <omgdi:waypoint x="565.0" y="187.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_10" id="BPMNEdge__10">
+        <omgdi:waypoint x="650.0" y="187.0"></omgdi:waypoint>
+        <omgdi:waypoint x="705.0" y="185.0"></omgdi:waypoint>
+        <omgdi:waypoint x="755.0" y="187.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
